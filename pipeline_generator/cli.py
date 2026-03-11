@@ -7,7 +7,6 @@ import click
 from . import __version__
 from .generator import PLATFORMS, create_spec_file, generate_pipelines, load_spec
 from .output.console import (
-    console,
     print_detection,
     print_error,
     print_header,

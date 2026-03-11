@@ -263,7 +263,7 @@ class GitLabCIGenerator(BasePlatform):
             lines.append("  stage: deploy")
             lines.append("  script:")
             lines.append(f'    - echo "Deploying to {env.name}..."')
-            lines.append(f"    # Add your deployment commands here")
+            lines.append("    # Add your deployment commands here")
 
             lines.append("  environment:")
             lines.append(f"    name: {env.name}")

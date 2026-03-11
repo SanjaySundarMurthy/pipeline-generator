@@ -131,7 +131,6 @@ class AzureDevOpsGenerator(BasePlatform):
                     lines.append(f"          - script: {runs[0]}")
                     lines.append(f'            displayName: "Run {name}"')
                 elif runs:
-                    combined = "\n              ".join(runs)
                     lines.append("          - script: |")
                     for cmd in runs:
                         lines.append(f"              {cmd}")
@@ -177,7 +176,7 @@ class AzureDevOpsGenerator(BasePlatform):
             lines.append(f"          - task: {task}")
             lines.append("            inputs:")
             lines.append(f"              {key}: $({ver_var})")
-            lines.append(f'            displayName: "Setup runtime"')
+            lines.append('            displayName: "Setup runtime"')
 
         lines.append(f"          - script: {tools.get('install_deps', 'echo no-op')}")
         lines.append('            displayName: "Install dependencies"')
@@ -254,8 +253,6 @@ class AzureDevOpsGenerator(BasePlatform):
         return "\n".join(lines)
 
     def _build_stage(self, spec: PipelineSpec, tools: dict, deps: list[str]) -> str:
-        dep_list = "\n".join(f"      - {d}" for d in deps) if deps else "      - Test"
-
         lines = [
             "  # ---- Build & Push Docker Image ----",
             "  - stage: Build",

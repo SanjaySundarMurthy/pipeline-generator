@@ -10,20 +10,14 @@ import yaml
 
 from pipeline_generator.detector import detect_project
 from pipeline_generator.generator import (
-    PLATFORMS,
     fill_defaults,
     generate_pipelines,
     render_spec_yaml,
 )
 from pipeline_generator.models import (
-    BuildConfig,
     DeployConfig,
-    Environment,
-    LintConfig,
     PipelineSpec,
     ProjectConfig,
-    SecurityConfig,
-    TestConfig,
 )
 from pipeline_generator.platforms.azure import AzureDevOpsGenerator
 from pipeline_generator.platforms.github import GitHubActionsGenerator
@@ -296,7 +290,7 @@ class TestGeneratorEngine:
 
     def test_write_files_to_disk(self, python_spec):
         with tempfile.TemporaryDirectory() as tmpdir:
-            results = generate_pipelines(
+            generate_pipelines(
                 python_spec, platform="github", output_dir=tmpdir, dry_run=False
             )
             filepath = os.path.join(tmpdir, ".github", "workflows", "ci.yml")

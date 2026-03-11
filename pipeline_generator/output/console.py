@@ -2,17 +2,21 @@
 
 from __future__ import annotations
 
+import sys
 from typing import TYPE_CHECKING
 
 from rich.console import Console
 from rich.panel import Panel
 from rich.syntax import Syntax
-from rich.table import Table
-from rich.text import Text
 
 if TYPE_CHECKING:
     from ..detector import DetectionResult
     from ..models import PipelineSpec
+
+# Force UTF-8 on Windows to prevent emoji encoding errors
+if sys.platform == "win32":
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 console = Console()
 
