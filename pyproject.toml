@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pipeline-generator"
+name = "cicd-pipeline-generator"
 version = "1.0.0"
 description = "Generate production-ready CI/CD pipeline configs for GitHub Actions, Azure DevOps, and GitLab CI from a simple YAML spec."
 readme = "README.md"
@@ -48,6 +48,9 @@ pipe-gen = "pipeline_generator.cli:cli"
 Homepage = "https://github.com/SanjaySundarMurthy/pipeline-generator"
 Repository = "https://github.com/SanjaySundarMurthy/pipeline-generator"
 Issues = "https://github.com/SanjaySundarMurthy/pipeline-generator/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pipeline_generator"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,8 +1,10 @@
 # 🚀 pipeline-generator
 
+[![PyPI](https://img.shields.io/pypi/v/cicd-pipeline-generator.svg)](https://pypi.org/project/cicd-pipeline-generator/)
 [![CI](https://github.com/SanjaySundarMurthy/pipeline-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/SanjaySundarMurthy/pipeline-generator/actions)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Downloads](https://img.shields.io/pypi/dm/cicd-pipeline-generator.svg)](https://pypi.org/project/cicd-pipeline-generator/)
 
 **Generate production-ready CI/CD pipeline configs from a simple YAML spec.**
 
@@ -30,7 +32,7 @@ pipe-gen generate --demo
 ## 📦 Installation
 
 ```bash
-pip install pipeline-generator
+pip install cicd-pipeline-generator
 ```
 
 Or install from source:
